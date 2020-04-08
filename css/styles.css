@@ -15,39 +15,39 @@
   font-size: 6vh;
 }
 
-.upper-left {
+.upperLeft {
   border-top: none;
   border-left: none;
  }
 
-.center-left {
+.centerLeft {
   border-left: none;
   
 }
 
-.lower-left {
+.lowerLeft {
   border-left: none;
   border-bottom: none;
 }
 
-.lower-mid {
+.lowerMid {
   border-bottom: none;
 }
 
-.upper-mid {
+.upperMid {
   border-top: none;
 }
 
-.upper-right {
+.upperRight {
   border-top: none;
   border-right: none;
 }
 
-.center-right {
+.centerRight {
   border-right: none;
 }
 
-.lower-right {
+.lowerRight {
   border-bottom: none;
   border-right: none;
 }
