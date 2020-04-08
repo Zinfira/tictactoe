@@ -5,6 +5,9 @@
   width: 65vh;
   margin: 20vh auto;
 }
+.game {
+  display: none;
+}
 
 .box {
   border: 5px solid black;
