@@ -8,27 +8,21 @@
 
 .box {
   border: 5px solid black;
-  
   height: 20vh;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 6vh;
 }
 
 .upper-left {
- border-top: none;
- border-left: none;
-}
-
-.upper-mid {
   border-top: none;
-}
+  border-left: none;
+ }
 
 .center-left {
   border-left: none;
   
-}
-
-.lower-mid {
-  border-bottom: none;
 }
 
 .lower-left {
@@ -36,11 +30,20 @@
   border-bottom: none;
 }
 
+.lower-mid {
+  border-bottom: none;
+}
 
-
+.upper-mid {
+  border-top: none;
+}
 
 .upper-right {
   border-top: none;
+  border-right: none;
+}
+
+.center-right {
   border-right: none;
 }
 
@@ -49,7 +52,3 @@
   border-right: none;
 }
 
-
-.center-right {
-  border-right: none;
-}
