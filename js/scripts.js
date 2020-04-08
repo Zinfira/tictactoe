@@ -6,7 +6,6 @@ function Game() {
   this.turn = 1; // <---keeps track of whose turn it is
 
 }
-
 function winConditions() {
   this.win1 = ["0", "1", "2"]
   this.win2 = ["3", "4", "5"]
@@ -17,6 +16,14 @@ function winConditions() {
   this.win7 = ["0", "4", "8"]
   this.win8 = ["2", "4", "6"]
 }
+winConditions.prototype.checkForWinner(function () {
+  for (var i = 0; i > 0; i++) {
+    if (player1.includes(win1[i]) && player1.includes(win1[i + 1]) && player1.includes(win1[i + 2])) { $("#winner").append("X player wins!") }
+    else if (player1.includes(win2[i]) && player1.includes(win2[i + 1]) && player1.includes(win2[i + 2])) {
+      $("#winner").append("X player wins!")
+
+    }
+  })
 // ---> does all of what is in win1[] match anything in player1[] or player2[]?
 
 // winConditions.prototype.checkForWinner = function() {
