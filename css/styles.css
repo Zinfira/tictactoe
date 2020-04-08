@@ -1,0 +1,55 @@
+.board {
+  float:center;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  width: 65vh;
+  margin: 20vh auto;
+}
+
+.box {
+  border: 5px solid black;
+  
+  height: 20vh;
+
+}
+
+.upper-left {
+ border-top: none;
+ border-left: none;
+}
+
+.upper-mid {
+  border-top: none;
+}
+
+.center-left {
+  border-left: none;
+  
+}
+
+.lower-mid {
+  border-bottom: none;
+}
+
+.lower-left {
+  border-left: none;
+  border-bottom: none;
+}
+
+
+
+
+.upper-right {
+  border-top: none;
+  border-right: none;
+}
+
+.lower-right {
+  border-bottom: none;
+  border-right: none;
+}
+
+
+.center-right {
+  border-right: none;
+}
