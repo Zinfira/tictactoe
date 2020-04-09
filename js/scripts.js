@@ -19,7 +19,7 @@ Game.prototype.addBox = function () {
 
 Game.prototype.checkForWin = function () {
   if (this.pOneBoxes[0] + this.pOneBoxes[1] + this.pOneBoxes[2] === 3) {
-    $(".winner").append("It's a WIN for X!")
+    $("#winner").append("It's a WIN for X!")
   }
 }
 
@@ -82,15 +82,18 @@ $(document).ready(function () {
         game.player2.push(this.id);
         //      game.player2.sort();
         // wins.checkForWinner();
-        console.log(game.pOneBoxes);
+
         game.addBox();
         game.checkForWin();
+        console.log(game.pOneBoxes);
       }
       else if ((game.turn % 2) !== 0) {
         $(this).html("X");
         $("#playerTurn").html("O");
         game.turn += 1;
         game.player1.push(this.id);
+        game.addBox();
+        game.checkForWin();
         //console.log(game.player1);
         //      game.player1.sort();
         //    wins.checkForWinner();
