@@ -4,8 +4,10 @@ function Game() {
   this.player1 = []; //<--- keeps track of what boxes have been checked by X player 
   this.player2 = []; // <--- keeps track of what boxes have been checked by O player
   this.turn = 1; // <---keeps track of whose turn it is
-  this.pOneBoxes = [0, 0, 0, 0, 0, 0, 0, 0, 0]
-  this.pTwoBoxes = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+  this.pOneBoxes = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+  this.pTwoBoxes = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+  this.pOneWins = 0;
+  this.pTwoWins = 0;
 }
 
 Game.prototype.addBox = function () {
@@ -18,9 +20,17 @@ Game.prototype.addBox = function () {
 }
 
 Game.prototype.checkForWin = function () {
-  if (this.pOneBoxes[0] + this.pOneBoxes[1] + this.pOneBoxes[2] === 3) {
-    $("#winner").append("It's a WIN for X!")
+  if (this.pOneBoxes[0] + this.pOneBoxes[1] + this.pOneBoxes[2] === 3 || this.pOneBoxes[3] + this.pOneBoxes[4] + this.pOneBoxes[5] === 3 || this.pOneBoxes[6] + this.pOneBoxes[7] + this.pOneBoxes[8] === 3 || this.pOneBoxes[0] + this.pOneBoxes[3] + this.pOneBoxes[6] === 3 || this.pOneBoxes[1] + this.pOneBoxes[4] + this.pOneBoxes[7] === 3 || this.pOneBoxes[2] + this.pOneBoxes[5] + this.pOneBoxes[8] === 3 || this.pOneBoxes[0] + this.pOneBoxes[4] + this.pOneBoxes[8] === 3 || this.pOneBoxes[2] + this.pOneBoxes[4] + this.pOneBoxes[6] === 3) {
+    $("#winner").append("It's a WIN for X!");
+    this.pOneWins += 1;
+    $(".box").empty();
   }
+  else if (this.pTwoBoxes[0] + this.pTwoBoxes[1] + this.pTwoBoxes[2] === 3 || this.pTwoBoxes[3] + this.pTwoBoxes[4] + this.pTwoBoxes[5] === 3 || this.pTwoBoxes[6] + this.pTwoBoxes[7] + this.pTwoBoxes[8] === 3 || this.pTwoBoxes[0] + this.pTwoBoxes[3] + this.pTwoBoxes[6] === 3 || this.pTwoBoxes[1] + this.pTwoBoxes[4] + this.pTwoBoxes[7] === 3 || this.pTwoBoxes[2] + this.pTwoBoxes[5] + this.pTwoBoxes[8] === 3 || this.pTwoBoxes[0] + this.pTwoBoxes[4] + this.pTwoBoxes[8] === 3 || this.pTwoBoxes[2] + this.pTwoBoxes[4] + this.pTwoBoxes[6] === 3) {
+    $("#winner").append("It's a WIN for O!");
+    this.pTwoWins += 1;
+    $(".box").empty();
+  }
+  else if ()
 }
 
 // function winConditions() {
@@ -69,7 +79,7 @@ $(document).ready(function () {
   var game = new Game();
   // var wins = new winConditions();
   $("#startGame").click(function () {
-    $(".game").show();
+    $(".game").fadeIn();
   })
   $(".box").click(function () {
 
@@ -92,6 +102,7 @@ $(document).ready(function () {
         $("#playerTurn").html("O");
         game.turn += 1;
         game.player1.push(this.id);
+        console.log(game.player1);
         game.addBox();
         game.checkForWin();
         //console.log(game.player1);
