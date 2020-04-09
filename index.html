@@ -14,17 +14,22 @@
 <div id="start-screen">
   <form>
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-3">
+
+        <label>Enter name for "X" player</label>
         <input text="text" id="xplayer-name">
-        <label>Enter name for "<span id="xplayer">X</span>" player</label>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-3">
+
+        <label>Enter name for "O" player</label>
         <input text="text" id="xplayer-name">
-        <label>Enter name for "<span id="oplayer">O</span>" player</label>
+      </div>
+      <div class="col-md-2">
+        <button type="button" id="startGame">Start the Game!</button>
       </div>
     </div>
 
-    <button type="button" id="startGame">Start the Game!</button>
+
 
   </form>
 </div>
@@ -46,9 +51,13 @@
 
   </div>
 </div>
-<h2 class="game">It is the <span id="playerTurn">X</span> Player's turn.
+<h2 class="game">It is the <span id="playerTurn"></span> Player's turn.
 </h2>
 <div id="winner"></div>
+<br id="winCount">
+<h2>Player <span id="xname"></span> Wins: <span id="oneWinCount"></span></h2>
+<h2>Player <span id="oname"></span> Wins: <span id="twoWinCount"></span></h2>
+</br>
 
 
 </body>
