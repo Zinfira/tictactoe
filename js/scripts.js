@@ -32,21 +32,21 @@ Game.prototype.checkForWin = function () {
 
   if (this.pOneBoxes[0] + this.pOneBoxes[1] + this.pOneBoxes[2] === 3 || this.pOneBoxes[3] + this.pOneBoxes[4] + this.pOneBoxes[5] === 3 || this.pOneBoxes[6] + this.pOneBoxes[7] + this.pOneBoxes[8] === 3 || this.pOneBoxes[0] + this.pOneBoxes[3] + this.pOneBoxes[6] === 3 || this.pOneBoxes[1] + this.pOneBoxes[4] + this.pOneBoxes[7] === 3 || this.pOneBoxes[2] + this.pOneBoxes[5] + this.pOneBoxes[8] === 3 || this.pOneBoxes[0] + this.pOneBoxes[4] + this.pOneBoxes[8] === 3 || this.pOneBoxes[2] + this.pOneBoxes[4] + this.pOneBoxes[6] === 3) {
     $("#winner").html("It's a WIN for X!");
-    $("#winner").fadeIn(3000);
+    $("#winner").fadeIn(1200);
     this.Winner = "yes";
   }
 
   else if (this.pTwoBoxes[0] + this.pTwoBoxes[1] + this.pTwoBoxes[2] === 3 || this.pTwoBoxes[3] + this.pTwoBoxes[4] + this.pTwoBoxes[5] === 3 || this.pTwoBoxes[6] + this.pTwoBoxes[7] + this.pTwoBoxes[8] === 3 || this.pTwoBoxes[0] + this.pTwoBoxes[3] + this.pTwoBoxes[6] === 3 || this.pTwoBoxes[1] + this.pTwoBoxes[4] + this.pTwoBoxes[7] === 3 || this.pTwoBoxes[2] + this.pTwoBoxes[5] + this.pTwoBoxes[8] === 3 || this.pTwoBoxes[0] + this.pTwoBoxes[4] + this.pTwoBoxes[8] === 3 || this.pTwoBoxes[2] + this.pTwoBoxes[4] + this.pTwoBoxes[6] === 3) {
     $("#winner").html("It's a WIN for O!");
-    $("#winner").fadeIn(3000);
+    $("#winner").fadeIn(1200);
     this.Winner = "yes";
     //   console.log('p2 wins');
   }
 
   else if (this.pOneBoxes[0] + this.pOneBoxes[1] + this.pOneBoxes[2] + this.pOneBoxes[3] + this.pOneBoxes[4] + this.pOneBoxes[5] + this.pOneBoxes[6] + this.pOneBoxes[7] + this.pOneBoxes[8] === 4 && this.pTwoBoxes[0] + this.pTwoBoxes[1] + this.pTwoBoxes[2] + this.pTwoBoxes[3] + this.pTwoBoxes[4] + this.pTwoBoxes[5] + this.pTwoBoxes[6] + this.pTwoBoxes[7] + this.pTwoBoxes[8] === 5 || this.pOneBoxes[0] + this.pOneBoxes[1] + this.pOneBoxes[2] + this.pOneBoxes[3] + this.pOneBoxes[4] + this.pOneBoxes[5] + this.pOneBoxes[6] + this.pOneBoxes[7] + this.pOneBoxes[8] === 5 && this.pTwoBoxes[0] + this.pTwoBoxes[1] + this.pTwoBoxes[2] + this.pTwoBoxes[3] + this.pTwoBoxes[4] + this.pTwoBoxes[5] + this.pTwoBoxes[6] + this.pTwoBoxes[7] + this.pTwoBoxes[8] === 4) {
     $("#winner").html("It's a DRAW!");
-    $("#winner").fadeIn(2000);
-    $("#winner").fadeOut(2000);
+    $("#winner").fadeIn(1200);
+    $("#winner").fadeOut(1200);
     this.Winner = "draw";
   }
 
@@ -79,7 +79,7 @@ $(document).ready(function () {
     if ($(this).is(":empty")) {
 
       if ((game.turn % 2) == 0) {
-        $(this).html("O");
+        $(this).html("<p class='Oes'>O</p>");
         $("#playerTurn").html("<strong>X</strong>");
         game.turn += 1;
         game.player2.push(this.id);
@@ -96,7 +96,7 @@ $(document).ready(function () {
           game.player2 = [];
           players.pTwoWins += 1;
           $(".box").empty();
-          $("#winner").fadeOut(2000);
+          $("#winner").fadeOut(1200);
           game.Winner = "";
           game.turn = 1;
           $("#twoWinCount").html(players.pTwoWins).val();
@@ -106,7 +106,7 @@ $(document).ready(function () {
         //       console.log(game.pOneBoxes);
       }
       else if ((game.turn % 2) !== 0) {
-        $(this).html("X");
+        $(this).html("<p class='Xes'>X</p>");
         $("#playerTurn").html("<strong>O</strong>");
         game.turn += 1;
         game.player1.push(this.id);
@@ -120,7 +120,7 @@ $(document).ready(function () {
           game.player2 = [];
           players.pOneWins += 1;
           $(".box").empty();
-          $("#winner").fadeOut(2000);
+          $("#winner").fadeOut(1200);
           console.log(players.pOneWins);
           game.Winner = "";
           game.turn = 1;
@@ -135,7 +135,7 @@ $(document).ready(function () {
           game.player1 = [];
           game.player2 = [];
           $(".box").empty();
-          $("#winner").fadeOut(2000);
+          $("#winner").fadeOut(1200);
           console.log(players.pOneWins);
           game.Winner = "";
           players.draws += 1;
