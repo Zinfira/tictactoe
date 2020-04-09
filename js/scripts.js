@@ -44,34 +44,7 @@ winConditions.prototype.checkForWinner = function () {
   // }
 }
 
-// ---> does all of what is in win1[] match anything in player1[] or player2[]?
 
-// winConditions.prototype.checkForWinner = function() {
-//  for (var i=0; i<=wins.length; i++) {
-//   0
-//  }  
-// }
-
-// function Board() {
-//   this.upperLeft = "1";
-//   this.upperMid = "2";
-//   this.upperRight = "3";
-//   this.centerLeft = "4";
-//   this.centerMid = "5";
-//   this.centerRight = "6";
-//   this.lowerLeft = "7";
-//   this.lowerMid = "8";
-//   this.lowerRight = "9";
-// }
-
-// Board.prototype.checkWinnerConditions = function () {
-//   if (this.upperLeft === this.upperMid && this.UppperLeft === this.upperRight) {
-//     return
-//   } else (this
-// })
-
-
-// 
 // UI Logic   
 
 var game = new Game();
