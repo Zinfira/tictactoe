@@ -30,56 +30,32 @@ Game.prototype.checkForWin = function () {
     this.pTwoWins += 1;
     $(".box").empty();
   }
-  else if ()
+
+  else if (this.pOneBoxes[0] + this.pOneBoxes[1] + this.pOneBoxes[2] + this.pOneBoxes[3] + this.pOneBoxes[4] + this.pOneBoxes[5] + this.pOneBoxes[6] + this.pOneBoxes[7] + this.pOneBoxes[8] + this.pOneBoxes[9] === 4 && this.pTwoBoxes[0] + this.pTwoBoxes[1] + this.pTwoBoxes[2] + this.pTwoBoxes[3] + this.pTwoBoxes[4] + this.pTwoBoxes[5] + this.pTwoBoxes[6] + this.pTwoBoxes[7] + this.pTwoBoxes[8] + this.pTwoBoxes[9] === 5 || this.pOneBoxes[0] + this.pOneBoxes[1] + this.pOneBoxes[2] + this.pOneBoxes[3] + this.pOneBoxes[4] + this.pOneBoxes[5] + this.pOneBoxes[6] + this.pOneBoxes[7] + this.pOneBoxes[8] + this.pOneBoxes[9] === 5 && this.pTwoBoxes[0] + this.pTwoBoxes[1] + this.pTwoBoxes[2] + this.pTwoBoxes[3] + this.pTwoBoxes[4] + this.pTwoBoxes[5] + this.pTwoBoxes[6] + this.pTwoBoxes[7] + this.pTwoBoxes[8] + this.pTwoBoxes[9] === 4) {
+    $("#winner").append("It's a DRAW!")
+  }
+
 }
-
-// function winConditions() {
-//   this.win1 = ["0", "1", "2"]
-//   this.win2 = ["3", "4", "5"]
-//   this.win3 = ["6", "7", "8"]
-//   this.win4 = ["0", "3", "6"]
-//   this.win5 = ["1", "4", "7"]
-//   this.win6 = ["2", "5", "8"]
-//   this.win7 = ["0", "4", "8"]
-//   this.win8 = ["2", "4", "6"]
-// }
-// winConditions.prototype.checkForWinner = function () {
-
-//   if ((game.player1).includes("0") && (game.player1).includes("1") && (game.player1).includes("2")) {
-//     $("#winner").append("X player wins!")
-//   }
-// else if ((game.player1).includes(win2[i]) && (game.player1).includes(win2[i + 1]) && (game.player1).includes(win2[i + 2])) {
-//   $("#winner").append("X player wins!")
-// }
-// else if ((game.player1).includes(win3[i]) && (game.player1).includes(win3[i + 1])(game.player1).includes(win3[i + 2])) {
-//   $("#winner").append("X player wins!")
-// }
-// else if ((game.player1).includes(win4[i]) && (game.player1).includes(win4[i + 1]) && (game.player1).includes(win4[i])) {
-//   $("#winner").append("X player wins!")
-// }
-// else if ((game.player1).includes(win5[i]) && (game.player1).includes(win5[i + 1]) && (game.player1).includes(win5[i])) {
-//   $("#winner").append("X player wins!")
-// }
-// else if ((game.player1).includes(win6[i]) && (game.player1).includes(win6[i + 1]) && (game.player1).includes(win6[i])) {
-//   $("#winner").append("X player wins!")
-// }
-// else if ((game.player1).includes(win7[i]) && (game.player1).includes(win7[i + 1]) && (game.player1).includes(win7[i])) {
-//   $("#winner").append("X player wins!")
-// }
-// else if ((game.player1).includes(win8[i]) && (game.player1).includes(win8[i + 1]) && (game.player1).includes(win8[i])) {
-//   $("#winner").append("X player wins!")
-// }
-//}
-
 
 // UI Logic   
 
 
 $(document).ready(function () {
+
   var game = new Game();
+  var xPlayer = "";
+  var oPlayer = "";
   // var wins = new winConditions();
-  $("#startGame").click(function () {
+  $("#startGame").click(function (event) {
+    event.preventDefault();
+
+    xPlayer = $("input#xplayer-name").val(), ("X");
+    oPlayer = $("input#oplayer-name").val(), ("O");
+
     $(".game").fadeIn();
+    $("#start-screen").hide();
+
+
   })
   $(".box").click(function () {
 
