@@ -12,6 +12,9 @@
 </head>
 
 <div id="start-screen">
+  <center>
+    <h2>EXTREME TIC TAC TOE</h2>
+  </center>
   <form>
     <div class="row">
       <div class="col-md-3">
@@ -22,43 +25,52 @@
       <div class="col-md-3">
 
         <label>Enter name for "O" player</label>
-        <input text="text" id="xplayer-name">
+        <input text="text" id="oplayer-name">
       </div>
       <div class="col-md-2">
         <button type="button" id="startGame">Start the Game!</button>
       </div>
     </div>
 
-
-
   </form>
 </div>
-<div class="game">
-  <div class="board">
+<div class="row">
+  <div class="game">
+    <center>
+      <h2>EXTREME TIC TAC TOE</h2>
+    </center>
+    <h2>It is the <span id="playerTurn"></span> Player's turn.
+    </h2>
+  </div>
+  <div class="col-md-6">
+    <div id="winCount">
+      <h3><strong>X</strong> Player <span id="xname"></span> Wins: <span id="oneWinCount"></span></h3>
+      <h3><strong>O</strong> Player <span id="oname"></span> Wins: <span id="twoWinCount"></span></h3>
+      <h3>Draws: <span id="drawCount"></span></h3>
+    </div>
+    <div id="winner"></div>
+  </div>
+  <div class="col-md-6">
+    <div class="game">
+      <div class="board">
 
-    <div class="upperLeft box" id="0"></div>
-    <div class="upperMid box" id="1"></div>
-    <div class="upperRight box" id="2"></div>
+        <div class="upperLeft box" id="0"></div>
+        <div class="upperMid box" id="1"></div>
+        <div class="upperRight box" id="2"></div>
 
-    <div class="centerLeft box" id="3"></div>
-    <div class="centerMid box" id="4"></div>
-    <div class="centerRight box" id="5"></div>
+        <div class="centerLeft box" id="3"></div>
+        <div class="centerMid box" id="4"></div>
+        <div class="centerRight box" id="5"></div>
 
-    <div class="lowerLeft box" id="6"></div>
-    <div class="lowerMid box" id="7"></div>
-    <div class="lowerRight box" id="8"></div>
+        <div class="lowerLeft box" id="6"></div>
+        <div class="lowerMid box" id="7"></div>
+        <div class="lowerRight box" id="8"></div>
 
 
+      </div>
+    </div>
   </div>
 </div>
-<h2 class="game">It is the <span id="playerTurn"></span> Player's turn.
-</h2>
-<div id="winner"></div>
-<br id="winCount">
-<h2>Player <span id="xname"></span> Wins: <span id="oneWinCount"></span></h2>
-<h2>Player <span id="oname"></span> Wins: <span id="twoWinCount"></span></h2>
-</br>
-
 
 </body>
 
