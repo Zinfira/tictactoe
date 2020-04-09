@@ -4,23 +4,34 @@ function Game() {
   this.player1 = []; //<--- keeps track of what boxes have been checked by X player 
   this.player2 = []; // <--- keeps track of what boxes have been checked by O player
   this.turn = 1; // <---keeps track of whose turn it is
-
+  this.pOneBoxes = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+  this.pTwoBoxes = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 }
-function winConditions() {
-  this.win1 = ["0", "1", "2"]
-  this.win2 = ["3", "4", "5"]
-  this.win3 = ["6", "7", "8"]
-  this.win4 = ["0", "3", "6"]
-  this.win5 = ["1", "4", "7"]
-  this.win6 = ["2", "5", "8"]
-  this.win7 = ["0", "4", "8"]
-  this.win8 = ["2", "4", "6"]
-}
-winConditions.prototype.checkForWinner = function () {
 
-  if ((game.player1).includes("0") && (game.player1).includes("1") && (game.player1).includes("2")) {
-    $("#winner").append("X player wins!")
+Game.prototype.addBox = function () {
+  for (i = 0; i <= this.pOneBoxes.length; i++) {
+    this.pOneBoxes.splice(this.player1[i], 1, 1)
   }
+  for (i = 0; i <= this.pTwoBoxes.length; i++) {
+    this.pTwoBoxes.splice(this.player2[i], 1, 1)
+  }
+}
+
+// function winConditions() {
+//   this.win1 = ["0", "1", "2"]
+//   this.win2 = ["3", "4", "5"]
+//   this.win3 = ["6", "7", "8"]
+//   this.win4 = ["0", "3", "6"]
+//   this.win5 = ["1", "4", "7"]
+//   this.win6 = ["2", "5", "8"]
+//   this.win7 = ["0", "4", "8"]
+//   this.win8 = ["2", "4", "6"]
+// }
+// winConditions.prototype.checkForWinner = function () {
+
+//   if ((game.player1).includes("0") && (game.player1).includes("1") && (game.player1).includes("2")) {
+//     $("#winner").append("X player wins!")
+//   }
   // else if ((game.player1).includes(win2[i]) && (game.player1).includes(win2[i + 1]) && (game.player1).includes(win2[i + 2])) {
   //   $("#winner").append("X player wins!")
   // }
