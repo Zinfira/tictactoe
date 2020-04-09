@@ -9,12 +9,16 @@ function Game() {
 }
 
 Game.prototype.addBox = function () {
-  for (i = 0; i <= this.pOneBoxes.length; i++) {
+  for (i = 0; i <= this.player1.length; i++) {
     this.pOneBoxes.splice(this.player1[i], 1, 1)
   }
-  for (i = 0; i <= this.pTwoBoxes.length; i++) {
+  for (i = 0; i <= this.player2.length; i++) {
     this.pTwoBoxes.splice(this.player2[i], 1, 1)
   }
+}
+
+Game.prototype.checkForWin = function () {
+
 }
 
 // function winConditions() {
