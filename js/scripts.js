@@ -16,14 +16,34 @@ function winConditions() {
   this.win7 = ["0", "4", "8"]
   this.win8 = ["2", "4", "6"]
 }
-winConditions.prototype.checkForWinner(function () {
-  for (var i = 0; i > 0; i++) {
-    if (player1.includes(win1[i]) && player1.includes(win1[i + 1]) && player1.includes(win1[i + 2])) { $("#winner").append("X player wins!") }
-    else if (player1.includes(win2[i]) && player1.includes(win2[i + 1]) && player1.includes(win2[i + 2])) {
-      $("#winner").append("X player wins!")
+winConditions.prototype.checkForWinner = function () {
 
-    }
-  })
+  if ((game.player1).includes("0") && (game.player1).includes("1") && (game.player1).includes("2")) {
+    $("#winner").append("X player wins!")
+  }
+  // else if ((game.player1).includes(win2[i]) && (game.player1).includes(win2[i + 1]) && (game.player1).includes(win2[i + 2])) {
+  //   $("#winner").append("X player wins!")
+  // }
+  // else if ((game.player1).includes(win3[i]) && (game.player1).includes(win3[i + 1])(game.player1).includes(win3[i + 2])) {
+  //   $("#winner").append("X player wins!")
+  // }
+  // else if ((game.player1).includes(win4[i]) && (game.player1).includes(win4[i + 1]) && (game.player1).includes(win4[i])) {
+  //   $("#winner").append("X player wins!")
+  // }
+  // else if ((game.player1).includes(win5[i]) && (game.player1).includes(win5[i + 1]) && (game.player1).includes(win5[i])) {
+  //   $("#winner").append("X player wins!")
+  // }
+  // else if ((game.player1).includes(win6[i]) && (game.player1).includes(win6[i + 1]) && (game.player1).includes(win6[i])) {
+  //   $("#winner").append("X player wins!")
+  // }
+  // else if ((game.player1).includes(win7[i]) && (game.player1).includes(win7[i + 1]) && (game.player1).includes(win7[i])) {
+  //   $("#winner").append("X player wins!")
+  // }
+  // else if ((game.player1).includes(win8[i]) && (game.player1).includes(win8[i + 1]) && (game.player1).includes(win8[i])) {
+  //   $("#winner").append("X player wins!")
+  // }
+}
+
 // ---> does all of what is in win1[] match anything in player1[] or player2[]?
 
 // winConditions.prototype.checkForWinner = function() {
@@ -54,9 +74,9 @@ winConditions.prototype.checkForWinner(function () {
 // 
 // UI Logic   
 
-
+var game = new Game();
 $(document).ready(function () {
-  var game = new Game();
+
   var wins = new winConditions();
   $("#startGame").click(function () {
     $(".game").show();
@@ -70,7 +90,8 @@ $(document).ready(function () {
         $("#playerTurn").html("X");
         game.turn += 1;
         game.player2.push(this.id);
-        game.player2.sort();
+        //      game.player2.sort();
+        wins.checkForWinner();
 
       }
       else if ((game.turn % 2) !== 0) {
@@ -78,13 +99,14 @@ $(document).ready(function () {
         $("#playerTurn").html("O");
         game.turn += 1;
         game.player1.push(this.id);
-        game.player1.sort();
-
+        //console.log(game.player1);
+        //      game.player1.sort();
+        wins.checkForWinner();
       }
     }
 
-    console.log(wins);
-    console.log(game.player1);
+    // //console.log(wins);
+    //console.log(game.player1);
   })
 
 
